@@ -1,0 +1,83 @@
+/* ─── Reset & Base ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-deep:    #071018;
+  --bg-panel:   #0a1a28;
+  --bg-card:    #091826;
+  --border:     #122030;
+  --border-mid: #1c3a52;
+  --text-dim:   #304f68;
+  --text-mid:   #4a7898;
+  --text-main:  #7ab8d8;
+  --text-light: #a8c8e0;
+  --text-white: #e0d090;
+  --accent:     #c8921a;
+  --accent-h:   #e0a820;
+  --city-color: #6ab87a;
+  --county-color: #b87898;
+  --map-visited:#c8921a;
+  --map-hover:  #e0a820;
+  --map-default:#0f2236;
+  --map-stroke: #1a3e5c;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg-deep);
+  color: var(--text-light);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ─── Scrollbar ─────────────────────────────────────────── */
+::-webkit-scrollbar         { width: 4px; }
+::-webkit-scrollbar-track   { background: transparent; }
+::-webkit-scrollbar-thumb   { background: var(--border-mid); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-mid); }
+
+/* ─── Shared Select ─────────────────────────────────────── */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: 8px 32px 8px 10px;
+  background: var(--bg-card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23304f68'/%3E%3C/svg%3E") no-repeat right 10px center;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-light);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+select:hover  { border-color: var(--border-mid); }
+select:focus  { border-color: var(--text-mid); }
+select:disabled { opacity: 0.4; cursor: not-allowed; }
+select option { background: var(--bg-panel); color: var(--text-light); }
+
+/* ─── Animations ────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.25s ease forwards;
+}
+
+html, body { margin: 0; padding: 0; }
